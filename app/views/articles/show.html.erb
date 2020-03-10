@@ -1,5 +1,10 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.content %></p>
 
-<p><%= link_to "Do you want to edit the article?", edit_article_path(@article) %></p>
+
+<%= link_to article_path(@article), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <p>"Do you want to delete the article?"</p>
+<% end %>
+
+<p><%= link_to Do you want to edit the article?, edit_article_path(@article) %></p>
 <p><%= link_to "Back to the main page", articles_path %></p>
